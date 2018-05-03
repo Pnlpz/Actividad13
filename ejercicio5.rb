@@ -17,4 +17,5 @@ puts h
 
 print h.invert
 
-h { |k, v| puts v if k == h.keys.max }
+
+h.max_by { |k, v| k }
