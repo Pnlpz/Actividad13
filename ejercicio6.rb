@@ -12,3 +12,6 @@ restaurant_menu = { 'Ramen' => 7000, 'Dal Makhani'=> 8500, 'Coffee'=> 1200 }
 restaurant_menu.max_by {|k,v| v}
 
 restaurant_menu.min_by {|k,v| v}
+
+
+restaurant_menu.inject(0) {|sum, v| sum + v}
