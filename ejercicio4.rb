@@ -21,3 +21,8 @@ puts personas_hash
 
 
   personas_hash.each {|k, v| puts "#{k} tiene #{v} años" }
+
+
+
+#1.- Listo
+#2.- Pendiente
