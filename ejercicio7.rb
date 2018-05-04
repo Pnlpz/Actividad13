@@ -16,14 +16,37 @@ case opcion
     print inventario
 
   when 2
-    #eliminar
+    puts "Introduzca el articulo a eliminar"
+    articulo = gets.chomp
+    inventario.delete(:artiulo)
+    print inventario
+
   when 3
-    #Actualizar
+    print inventario
+    #Actualizar ¿Cómo?
   when 4
-    #Total
+    total = 0
+    total = inventario.inject(0) {|sum, v| sum + v }
+    print total
+    #Total (Nope)
   when 5
+    maximo = 0
+    inventario.each do |k, v|
+      if v > maximo
+        maximo = v
+      end
+    end
+    print maximo
     #mayor
   when 6
+    print "Ingrese artículo"
+    buscar = gets.chomp
+    inventario.each do |k, v|
+    if buscar = k = true
+      puts "Si"
+    else puts "No"
+    end
+  end
     #buscar
   when 7
     #Salir
