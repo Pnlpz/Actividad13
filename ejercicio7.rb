@@ -4,7 +4,15 @@ inventario = { 'Notebooks': 4, 'PC Escritorio': 6, 'Routers': 10, 'Impresoras': 
 
 
 while opcion != 7
-  print "Ingresa una opción"
+  print "Ingresa una opción: "
+  puts "1.- Agregar artículo"
+  puts "2.- Eliminar artículo"
+  puts "3.- Actualizar inventario"
+  puts "4.- Sumar valores"
+  puts "5.- Mayor valor"
+  puts "6.- Buscar artículo"
+  puts "7.- Salir"
+
   opcion = gets.chomp.to_i
 case opcion
   when 1
@@ -14,20 +22,21 @@ case opcion
     stock = linea[1].to_i
     inventario[producto] = stock
     print inventario
-
+    #Solo se agrega una clave, no se agrega el valor como valor
   when 2
-    puts "Introduzca el articulo a eliminar"
-    articulo = gets.chomp
-    inventario.delete(:artiulo)
     print inventario
+    puts "Introduzca el articulo a eliminar"
+    item = gets.chomp
+    inventario.map{|item| item}.pop
 
+    print inventario
+    #No puedo
   when 3
     print inventario
     #Actualizar ¿Cómo?
   when 4
-    total = 0
-    total = inventario.inject(0) {|sum, v| sum + v }
-    print total
+    total = (inventario.values).inject(0) {|sum, v| sum + v }
+    puts "El total es #{total}"
     #Total (Nope)
   when 5
     maximo = 0
@@ -36,19 +45,20 @@ case opcion
         maximo = v
       end
     end
-    print maximo
+    print "El valor máximo es #{maximo}"
     #mayor
   when 6
     print "Ingrese artículo"
     buscar = gets.chomp
-    inventario.each do |k, v|
-    if buscar = k = true
+    inventario.map do |k, v|
+    if buscar == true
       puts "Si"
     else puts "No"
     end
   end
-    #buscar
+    #buscar...No resulta
   when 7
+    exit
     #Salir
   else
     puts "Try again"
