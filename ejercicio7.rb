@@ -17,19 +17,19 @@ while opcion != 7
 case opcion
   when 1
     puts "Introduzca el articulo y el stock"
-    linea = gets.chomp.split(" , ")
+    linea = gets.chomp.split(" ")
     producto = linea[0]
     stock = linea[1].to_i
     inventario[producto] = stock
     print inventario
-    #Solo se agrega una clave, no se agrega el valor como valor
+    #Listo
   when 2
     print inventario
     puts "Introduzca el articulo a eliminar"
     item = gets.chomp
-    inventario.map{|item| item}.pop
+    del = inventario.map{|k| k == item }.delete
 
-    print inventario
+    print del
     #No puedo
   when 3
     print inventario
