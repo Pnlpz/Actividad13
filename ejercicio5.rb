@@ -7,7 +7,7 @@ meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo']
 ventas = [2000, 3000, 1000, 5000, 4000]
 
 hash = {}
-i=0
+i = 0
 meses.each do |k|
   hash[k] = ventas[i]
   i += 1
@@ -15,15 +15,8 @@ end
 
 puts hash
 
-print hash.invert
+puts hash.invert
 
-# maximo = 0
-# hash.each do |ventas, meses|
-#   if ventas > maximo
-#     maximo = ventas
-#   end
-# end
-#
-# puts maximo
+print hash.invert.max_by { |k, v| k } 
 
-#h.max_by { |k, v| k } #No se como hacerlo. Me sale mayo...en vez de abril
+#Listo

@@ -16,13 +16,17 @@ personas.each do |k|
   i += 1
 
 end
-
 puts personas_hash
 
+def edades(personas_hash)
+  personas_hash.each do |k, v|
+    puts v
+  end
+end
 
   personas_hash.each {|k, v| puts "#{k} tiene #{v} años" }
 
-
+puts edades
 
 #1.- Listo
-#2.- Pendiente
+#2.- Listo
